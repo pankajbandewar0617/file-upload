@@ -1,0 +1,45 @@
+<div class="first-div">
+    <div class="main-div">
+        <div class="heading">
+            <h3>Upload the Document</h3>
+        </div>
+        <div class="upload-div">
+            <div class="upload-box">
+                <ngx-dropzone class="upload-file" [accept]="'application/*'" (change)="onSelect($event)" #fileInput>
+                    <ngx-dropzone-label>
+                        <div>
+                            <span class="material-icons">
+                                cloud_upload
+                            </span>
+                            <p>Drag and Drop</p>
+                            <p>your file, or Select file from your system</p>
+                        </div>
+                    </ngx-dropzone-label>
+                    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                        <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                    </ngx-dropzone-preview>
+                </ngx-dropzone>
+                <div class="info">
+                    <p>Supported file: (xls / xlsx)</p>
+                    <p>[Max: 100MB]</p>
+                </div>
+            </div>
+            <div>
+                <button class="select">BROWSE TO SELECT</button>
+            </div>
+        </div>
+        <div>
+            <button class="upload" [style.backgroundColor]="hasDisabled ? '#c2c4c4' : '#13ace8'"
+                [disabled]="hasDisabled" (click)="onUpload()">UPLOAD</button>
+        </div>
+    </div>
+    <div>
+        <div>
+            <button class="option" [style.backgroundColor]="hasUpload ?  '#13ace8' : '#bdebfc'"
+                [disabled]="!hasUpload">UPLOADING</button>
+            <button class="option" [style.backgroundColor]="hasUpload ?  '#13ace8' : '#bdebfc'"
+                [disabled]="!hasUpload">EXTRACTING</button>
+        </div>
+        <button (click)="gotoView()" [disabled]="!hasUpload" class="view">VIEW</button>
+    </div>
+</div>

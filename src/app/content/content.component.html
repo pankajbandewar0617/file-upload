@@ -1,0 +1,21 @@
+<div>
+    <button (click)="goBack()" class="go-back"> Go Back</button>
+    <table class="table">
+        <!-- <thead> -->
+        <tr class="head">
+            <th>Country</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Region</th>
+            <th>Area (in sq. km)</th>
+        </tr>
+        <!-- </thead> -->
+        <tr class="data" *ngFor="let country of countries">
+            <td>{{country.name}}</td>
+            <td>{{country.capital}}</td>
+            <td>{{country.population}}</td>
+            <td>{{country.region}}</td>
+            <td>{{country.area}}</td>
+        </tr>
+    </table>
+</div>

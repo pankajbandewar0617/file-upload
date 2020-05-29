@@ -5,7 +5,9 @@
         </div>
         <div class="upload-div">
             <div class="upload-box">
-                <ngx-dropzone class="upload-file" [accept]="'application/*'" (change)="onSelect($event)" #fileInput>
+                <ngx-dropzone class="upload-file"
+                    [accept]="'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel'"
+                    (change)="onSelect($event)" #fileInput>
                     <ngx-dropzone-label>
                         <div>
                             <span class="material-icons">

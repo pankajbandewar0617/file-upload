@@ -1,5 +1,45 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to right, #0b9bd4, #63c2b4);
+}
 .menu {
   background-color: transparent;
   border: none;
   color: white;
+}
+.user {
+  border-radius: 50%;
+  border: none;
+  height: 36px;
+}
+.custom-select {
+  background: transparent;
+  border: none;
+}
+.first-div {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+}
+.second-div {
+  position: relative;
+  top: 5px;
+}
+footer {
+  position: fixed;
+  height: 40px;
+  bottom: 0;
+  width: 100%;
+  background-color: #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 20px 0px;
+}
+.copyright {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.logo {
+  margin-right: 30px;
 }

@@ -1,27 +1,41 @@
-.main-div {
-  width: 800px;
-  text-align: -webkit-center;
+.first-div {
+  margin: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+.first-main-div {
+  width: 40%;
+}
+.second-main-div {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+.option-div {
+  width: 80%;
+}
+.option-button-div {
+  margin: 60px 0px 40px 0px;
 }
 .heading {
-  text-align: center;
+  text-align: left;
 }
 .part1 {
   display: flex;
   flex-direction: column;
 }
 .upload-div {
-  background: #c2c4c4;
+  background-color: #f1f1e1;
   padding: 20px 0px;
-  margin: 10px;
-  width: 400px;
+  margin: 10px 10px 20px 0px;
+  width: 80%;
 }
 .upload-box {
-  width: 300px;
-}
-.upload-box {
+  width: 75%;
   background-color: white;
   padding: 10px;
   font-weight: 500;
+  margin: 20px 0px 10px 36px;
 }
 .upload-file {
   background-color: white;
@@ -36,6 +50,8 @@
   margin: 10px;
   padding: 5px 10px;
   font-weight: bold;
+  position: relative;
+  left: 25%;
 }
 .info {
   display: flex;
@@ -44,31 +60,50 @@
   justify-content: space-between;
 }
 .upload {
-  color: white;
-  width: 400px;
+  color: lightgrey;
+  width: 80%;
   padding: 10px;
   border: none;
   font-weight: bold;
   border-radius: 4px;
+  font-size: large;
 }
 .option {
   color: white;
-  width: 400px;
+  width: 70%;
   padding: 10px;
   border: none;
   font-weight: bold;
   border-radius: 4px;
   margin: 4px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
 }
 .view {
-  width: 400px;
+  width: 75%;
   padding: 10px;
   border: none;
   font-weight: bold;
   border-radius: 4px;
   margin: 4px;
+  color: #ffffff;
 }
-.first-div {
-  display: flex;
-  margin: 40px;
+.loader {
+  border: 4px solid #ffffff;
+  border-top: 4px solid #d3d3d3;
+  border-radius: 50%;
+  position: relative;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

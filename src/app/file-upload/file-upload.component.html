@@ -1,5 +1,5 @@
 <div class="first-div">
-    <div class="main-div">
+    <div class="first-main-div">
         <div class="heading">
             <h3>Upload the Document</h3>
         </div>
@@ -31,17 +31,24 @@
             </div>
         </div>
         <div>
-            <button class="upload" [style.backgroundColor]="hasDisabled ? '#c2c4c4' : '#13ace8'"
+            <button class="upload" [style.backgroundColor]="hasDisabled ? '#f1f1f1' : '#13ace8'"
                 [disabled]="hasDisabled" (click)="onUpload()">UPLOAD</button>
         </div>
     </div>
-    <div>
-        <div>
-            <button class="option" [style.backgroundColor]="hasUpload ?  '#13ace8' : '#bdebfc'"
-                [disabled]="!hasUpload">UPLOADING</button>
-            <button class="option" [style.backgroundColor]="hasUpload ?  '#13ace8' : '#bdebfc'"
-                [disabled]="!hasUpload">EXTRACTING</button>
+    <div class="second-main-div">
+        <div class="option-div">
+            <div class="option-button-div">
+                <div class="option" [style.backgroundColor]="hasUpload ?  '#13ace8' : '#bdebfc'">
+                    <div>UPLOADING</div>
+                    <div [style.display]="uploading ? 'block' : 'none'" class="loader"></div>
+                </div>
+                <div class="option" [style.backgroundColor]="hasExtract ?  '#13ace8' : '#bdebfc'">
+                    <div>EXTRACTING</div>
+                    <div [style.display]="extracting ? 'block' : 'none'" class="loader"></div>
+                </div>
+            </div>
+            <button (click)="gotoView()" [style.backgroundColor]="hasExtract ?  '#a1a1a1' : '#d8d8d8' "
+                [disabled]="!hasExtract" class="view">VIEW</button>
         </div>
-        <button (click)="gotoView()" [disabled]="!hasUpload" class="view">VIEW</button>
     </div>
 </div>

@@ -14,7 +14,7 @@ const routes: Routes = [
     component: FileUploadComponent,
   },
   {
-    path: 'content',
+    path: 'file-upload/content',
     component: ContentComponent,
   },
   {

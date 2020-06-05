@@ -1,23 +1,12 @@
-div {
+.main-div {
   margin: 20px;
 }
 .table {
-  border: solid 4px red;
-  width: 1000px;
+  min-height: 500px;
 }
 th {
-  background-color: blue;
-  color: white;
-  width: 200px;
-  height: 40px;
   font-size: 20px;
-  font-weight: 600;
-}
-td {
-  text-align: center;
-  background-color: lightseagreen;
-  color: black;
-  height: 40px;
+  background-color: #dddddd;
 }
 .go-back {
   width: 100px;
@@ -26,4 +15,14 @@ td {
   font-weight: bold;
   border-radius: 4px;
   margin: 20px 0px;
+}
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 30%;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

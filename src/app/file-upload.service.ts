@@ -1,29 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FileUploadService {
-  data: any = [
-    {
-      name: 'Afghanistan',
-      capital: 'Kabul',
-      population: 27657145,
-      region: 'Asia',
-      area: 652230,
-    },
-    {
-      name: 'Albania',
-      capital: 'Tirana',
-      region: 'Europe',
-      population: 2886026,
-      area: 28748,
-    },
-  ];
+  data: any = [];
   private extractedData = new BehaviorSubject<object>(this.data);
   data$ = this.extractedData.asObservable();
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data' }),
+  };
 
   constructor(private http: HttpClient) {}
 
@@ -32,10 +20,7 @@ export class FileUploadService {
   url = `https://example.com`;
 
   uploadFile(file: any): Observable<any> {
-    return this.http.post(this.url, file, {
-      reportProgress: true,
-      observe: 'body',
-    });
+    return this.http.post<any>(this.url, file, this.httpOptions);
   }
 
   sendData(data: any[]) {
@@ -48,3 +33,8 @@ export class FileUploadService {
     return this.http.get(`${this.url}?jobID=${jobID}`);
   }
 }
+
+// {
+//   reportProgress: true,
+//   observe: 'body',
+// }

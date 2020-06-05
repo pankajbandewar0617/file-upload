@@ -14,7 +14,7 @@ const routes: Routes = [
     component: FileUploadComponent,
   },
   {
-    path: 'file-upload/content',
+    path: 'file-upload/content/:jobID',
     component: ContentComponent,
   },
   {

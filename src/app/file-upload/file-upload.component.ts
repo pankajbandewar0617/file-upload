@@ -23,8 +23,8 @@ export class FileUploadComponent implements OnInit {
   uploading = false;
   hasExtract = false;
   extracting = false;
-  jobID: string = null;
-  extractedData: any = [
+  jobID: string = '55';
+  data: any = [
     {
       name: 'Afghanistan',
       capital: 'Kabul',
@@ -62,6 +62,7 @@ export class FileUploadComponent implements OnInit {
       area: 1246700,
     },
   ];
+  extractedData: any = [{ jobID: this.jobID }, { extractedData: this.data }];
 
   onSelect(event) {
     console.log(event);
@@ -85,16 +86,20 @@ export class FileUploadComponent implements OnInit {
     this.hasUpload = false;
     this.extracting = false;
     this.hasExtract = false;
-    // const fd = new FormData();
-    // fd.append('file', this.selectedFile.name);
-    // this.fileUpload.uploadFile(fd).subscribe((res) => {
-    //   console.log(event);
-    // this.jobID = res.jobID;
-    // });
+    const formData = new FormData();
+    console.log(this.selectedFile);
+    formData.append('document[file]', this.selectedFile);
+    formData.append('document[name]', this.selectedFile.name);
+
+    this.fileUpload.uploadFile(formData).subscribe((res) => {
+      console.log(res);
+      this.jobID = res.jobID;
+    });
     setTimeout(() => {
       this.uploading = false;
       this.hasUpload = true;
       this.extracting = true;
+      console.log(formData);
     }, 2000);
 
     var myVar = setInterval(myFunc.bind(this), 1000);
@@ -102,7 +107,7 @@ export class FileUploadComponent implements OnInit {
     function myFunc() {
       // keep hitting API until get response status =  'success'
       //   this.fileUpload.getData(jobID).subcribe(res =>  {
-      //     this.extractedData = res;
+      //     this.data = res;
       //     if (res.status == 'success') {
       //       clearInterval(myVar);
       //     }
@@ -121,7 +126,7 @@ export class FileUploadComponent implements OnInit {
 
   gotoView() {
     this.fileUpload.sendData(this.extractedData);
-    this.router.navigate([`content`], {
+    this.router.navigate([`content/${this.jobID}`], {
       relativeTo: this.route,
     });
   }

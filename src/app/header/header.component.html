@@ -1,19 +1,21 @@
-<mat-toolbar color="primary" class="navbar">
-    <div>
-        <button class="material-icons menu">menu</button>
-    </div>
-    <div class="first-div">
-        <div class="second-div">
-            <img src={{selectedFlag}} height="24px" alt="flag">
-            <select class="custom-select" (change)="onSelect($event)" name="country" #file>
-                <option value="US" selected>US</option>
-                <option value="IND">IND</option>
-            </select>
+<div class="content">
+    <mat-toolbar color="primary" class="navbar">
+        <div>
+            <button class="material-icons menu">menu</button>
         </div>
-        <button class="material-icons user">person</button>
-    </div>
-</mat-toolbar>
-<router-outlet></router-outlet>
+        <div class="first-div">
+            <div class="second-div">
+                <img src={{selectedFlag}} height="24px" alt="flag">
+                <select class="custom-select" (change)="onSelect($event)" name="country" #file>
+                    <option value="US" selected>US</option>
+                    <option value="IND">IND</option>
+                </select>
+            </div>
+            <button class="material-icons user">person</button>
+        </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>
 <footer>
     <div class="copyright">&#169; 2019 Indegene. All Rights Reserved</div>
     <div class="logo">

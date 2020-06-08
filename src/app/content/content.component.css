@@ -2,7 +2,7 @@
   margin: 20px;
 }
 .table {
-  min-height: 500px;
+  min-height: 100%;
 }
 th {
   font-size: 20px;

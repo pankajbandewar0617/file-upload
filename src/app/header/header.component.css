@@ -27,14 +27,12 @@
   top: 5px;
 }
 footer {
-  position: relative;
-  height: 40px;
-  bottom: 0;
+  height: 50px;
   width: 100%;
   background-color: #e3e3e3;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0px 20px 0px;
+  padding: 10px 0px;
 }
 .copyright {
   margin-left: 10px;
@@ -42,4 +40,8 @@ footer {
 }
 .logo {
   margin-right: 30px;
+}
+.content {
+  min-height: 100%;
+  margin: 0 auto -50px;
 }

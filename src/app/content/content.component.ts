@@ -23,6 +23,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ContentComponent implements OnInit {
   jobID: string;
   extractedData: any;
+  colWidth: string;
 
   // column you want to display
 
@@ -48,6 +49,7 @@ export class ContentComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.extractedData);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this.colWidth = 100 / this.displayedColumns.length + '%';
     });
   }
 

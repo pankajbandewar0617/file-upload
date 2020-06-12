@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" [contextMenu]="basic">
     <mat-toolbar color="primary" class="navbar">
         <div>
             <button class="material-icons menu">menu</button>
@@ -15,6 +15,17 @@
         </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
+    <div>
+        <context-menu>
+            <ng-template contextMenuItem (execute)="showMessage($event)">View Log</ng-template>
+            <ng-template contextMenuItem divider="true"></ng-template>
+            <ng-template contextMenuItem (execute)="showMessage($event)">Info..</ng-template>
+            <ng-template contextMenuItem divider="true"></ng-template>
+            <ng-template contextMenuItem (execute)="showMessage($event)">Refresh</ng-template>
+            <ng-template contextMenuItem divider="true"></ng-template>
+            <ng-template contextMenuItem (execute)="showMessage($event)">Properties..</ng-template>
+        </context-menu>
+    </div>
 </div>
 <footer>
     <div class="copyright">&#169; 2019 Indegene. All Rights Reserved</div>

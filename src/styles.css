@@ -1,4 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.ngx-contextmenu .dropdown-menu {
+  padding: 0;
+}
+.ngx-contextmenu li {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+}
+.ngx-contextmenu li:first-child {
+  border-top: none;
+}
+.ngx-contextmenu a {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #3d3d3d;
+}
+.ngx-contextmenu a:hover {
+  color: blue;
+  background-color: #d3d3d3;
+}
+.dropdown-menu {
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 160px;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.dropdown-menu .divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}

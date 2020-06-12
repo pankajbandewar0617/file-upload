@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { ContextMenuModule } from 'ngx-contextmenu';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     FormsModule,
     MaterialModule,
     NgxDropzoneModule,
+    ContextMenuModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

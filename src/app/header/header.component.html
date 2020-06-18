@@ -1,35 +1,37 @@
-<div class="content" [contextMenu]="basic">
-    <mat-toolbar color="primary" class="navbar">
-        <div>
-            <button class="material-icons menu">menu</button>
-        </div>
-        <div class="first-div">
-            <div class="second-div">
-                <img src={{selectedFlag}} height="24px" alt="flag">
-                <select class="custom-select" (change)="onSelect($event)" name="country" #file>
-                    <option value="US" selected>US</option>
-                    <option value="IND">IND</option>
-                </select>
-            </div>
-            <button class="material-icons user">person</button>
-        </div>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
+<div class="content" (contextmenu)="open($event)" (click)="close()">
     <div>
-        <context-menu>
-            <ng-template contextMenuItem (execute)="showMessage($event)">View Log</ng-template>
-            <ng-template contextMenuItem divider="true"></ng-template>
-            <ng-template contextMenuItem (execute)="showMessage($event)">Info..</ng-template>
-            <ng-template contextMenuItem divider="true"></ng-template>
-            <ng-template contextMenuItem (execute)="showMessage($event)">Refresh</ng-template>
-            <ng-template contextMenuItem divider="true"></ng-template>
-            <ng-template contextMenuItem (execute)="showMessage($event)">Properties..</ng-template>
-        </context-menu>
+        <mat-toolbar color="primary" class="navbar">
+            <div>
+                <button class="material-icons menu">menu</button>
+            </div>
+            <div class="first-div">
+                <div class="second-div">
+                    <img src={{selectedFlag}} height="24px" alt="flag">
+                    <select class="custom-select" (change)="onSelect($event)" name="country" #file>
+                        <option value="US" selected>US</option>
+                        <option value="IND">IND</option>
+                    </select>
+                </div>
+                <button class="material-icons user">person</button>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+        <div class="context-menu" [style.top]="top" [style.left]="left" [style.display]="menuVisible ? 'block':'none'">
+            <ul class="menu-list">
+                <li class="menu-options">View</li>
+                <li class="divider"></li>
+                <li class="menu-options">Info..</li>
+                <li class="divider"></li>
+                <li class="menu-options">Refresh</li>
+                <li class="divider"></li>
+                <li class="menu-options">Properties</li>
+            </ul>
+        </div>
     </div>
+    <footer>
+        <div class="copyright">&#169; 2019 Indegene. All Rights Reserved</div>
+        <div class="logo">
+            <img src="../../assets/img/logo.svg" height="60px" width="120px" alt="indegene">
+        </div>
+    </footer>
 </div>
-<footer>
-    <div class="copyright">&#169; 2019 Indegene. All Rights Reserved</div>
-    <div class="logo">
-        <img src="../../assets/img/logo.svg" height="60px" width="120px" alt="indegene">
-    </div>
-</footer>

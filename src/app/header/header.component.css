@@ -1,3 +1,7 @@
+.content {
+  min-height: 100%;
+  margin: 0 auto -50px;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -8,15 +12,6 @@
   border: none;
   color: white;
 }
-.user {
-  border-radius: 50%;
-  border: none;
-  height: 36px;
-}
-.custom-select {
-  background: transparent;
-  border: none;
-}
 .first-div {
   display: flex;
   justify-content: space-between;
@@ -25,6 +20,43 @@
 .second-div {
   position: relative;
   top: 5px;
+}
+.custom-select {
+  background: transparent;
+  border: none;
+}
+.user {
+  border-radius: 50%;
+  border: none;
+  height: 36px;
+}
+.context-menu {
+  position: absolute;
+  z-index: 100;
+  box-sizing: border-box;
+}
+.menu-list {
+  list-style: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  text-align: center;
+  background-color: #fff;
+  padding: 2px;
+}
+.menu-options {
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+.menu-options:hover {
+  color: blue;
+  background-color: #d3d3d3;
+}
+.divider {
+  height: 2px;
+  overflow: hidden;
+  background-color: #e5e5e5;
 }
 footer {
   height: 50px;
@@ -40,25 +72,4 @@ footer {
 }
 .logo {
   margin-right: 30px;
-}
-.content {
-  min-height: 100%;
-  margin: 0 auto -50px;
-}
-.m {
-  width: 120px;
-  box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  display: none;
-  background-color: white;
-}
-.menu-options {
-  list-style: none;
-  padding: 10px 0;
-}
-.menu-option {
-  font-weight: 500;
-  font-size: 14px;
-  padding: 10px 40px 10px 20px;
-  cursor: pointer;
 }

@@ -18,14 +18,9 @@ export class HeaderComponent implements OnInit {
 
   selectedFlag: string = this.flags.US;
 
+  left: string;
+  top: string;
   menuVisible: boolean = false;
-
-  left: any;
-  top: any;
-  mystyle = {
-    background: 'red',
-    border: 'solid 4px blue',
-  };
 
   @ViewChild(ContextMenuComponent) public basic: ContextMenuComponent;
 
@@ -34,8 +29,36 @@ export class HeaderComponent implements OnInit {
     this.selectedFlag = this.flags[value];
   }
 
-  showMessage(e) {
-    console.log(e);
-    console.log('Its working');
+  open(ev: MouseEvent) {
+    ev.preventDefault();
+    const menu = document.getElementsByClassName(
+      'context-menu'
+    )[0] as HTMLElement;
+    const { width, height } = menu.getBoundingClientRect();
+
+    if (window.innerWidth - ev.pageX < width) {
+      this.left = window.innerWidth - width + 'px';
+    } else {
+      this.left = ev.pageX + 'px';
+    }
+    if (window.innerHeight - ev.pageY < height) {
+      this.top = window.innerHeight - height + 'px';
+    } else {
+      this.top = ev.pageY + 'px';
+    }
+
+    this.menuVisible = true;
+
+    window.addEventListener('keydown', myFunction.bind(this));
+
+    function myFunction(e) {
+      if (e.keyCode == 27) {
+        this.menuVisible = false;
+      }
+    }
+  }
+
+  close() {
+    this.menuVisible = false;
   }
 }
